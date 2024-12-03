@@ -11,6 +11,10 @@ services:
     container_name: vanilla_sandbox
     ports:
       - 8787:8080
+    deploy:
+      resources:
+        limits:
+          cpus: '1'   # Limits the container to use only 50% of a single CPU
     environment:
      SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yml'
     volumes:

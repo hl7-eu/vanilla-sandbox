@@ -56,10 +56,21 @@ hapi:
     enable_index_missing_fields: true
     enable_index_of_type: true
     enable_index_contained_resource: true
-#    implementationguides:
-     # - url: http://build.fhir.org/ig/hl7-eu/gravitate-health/package.tgz
- #     - name: hl7.fhir.uv.emedicinal-product-info
- #       version: 1.0.0
+    #implementationguides:
+    ###    example from registry (packages.fhir.org)
+    #  swiss:
+    #    name: swiss.mednet.fhir
+    #    version: 0.8.0
+    #    reloadExisting: false
+    #    installMode: STORE_AND_INSTALL
+    #      example not from registry
+    #      ips_1_0_0:
+    #        packageUrl: https://build.fhir.org/ig/HL7/fhir-ips/package.tgz
+    #        name: hl7.fhir.uv.ips
+    #        version: 1.0.0
+    #    supported_resource_types:
+    #      - Patient
+    #      - Observation
 
 #    enable_repository_validating_interceptor: true
     use_apache_address_strategy: true

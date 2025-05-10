@@ -1,7 +1,7 @@
 
 server:
   servlet:
-    context-path: /vanilla-sandbox
+    context-path: /${SANDBOX_NAME}
 
 management:
   endpoints:
@@ -36,7 +36,7 @@ spring:
 hapi:
   fhir:
     openapi_enabled: true
-    fhir_version: R5
+    fhir_version: ${FHIR_VERSION}
     allowed_bundle_types: COLLECTION,DOCUMENT,MESSAGE,TRANSACTION,TRANSACTIONRESPONSE,BATCH,BATCHRESPONSE,HISTORY,SEARCHSET
     allow_cascading_deletes: true
     allow_contains_searches: true
@@ -99,16 +99,15 @@ hapi:
     tester:
       home:
         name: Local Tester
-#        server_address: "http://localhost/fhir"
- #       server_address: http://sandbox.hl7europe.eu/gravitate-health/fhir
+        server_address: http://sandbox.hl7europe.eu/${SANDBOX_NAME}/fhir
         refuse_to_fetch_third_party_urls: false
-        fhir_version: R5
+        fhir_version: ${FHIR_VERSION}
 
       global:
         name: Global Tester
-        server_address: "https://hapi.fhir.org/baseR4"
+        server_address: "https://hapi.fhir.org/base${FHIR_VERSION}"
         refuse_to_fetch_third_party_urls: false
-        fhir_version: R5
+        fhir_version: ${FHIR_VERSION}
 
 #    subscription:
 #        resthook_enabled: false

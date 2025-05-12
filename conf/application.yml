@@ -56,21 +56,7 @@ hapi:
     enable_index_missing_fields: true
     enable_index_of_type: true
     enable_index_contained_resource: true
-    #implementationguides:
-    ###    example from registry (packages.fhir.org)
-    #  swiss:
-    #    name: swiss.mednet.fhir
-    #    version: 0.8.0
-    #    reloadExisting: false
-    #    installMode: STORE_AND_INSTALL
-    #      example not from registry
-    #      ips_1_0_0:
-    #        packageUrl: https://build.fhir.org/ig/HL7/fhir-ips/package.tgz
-    #        name: hl7.fhir.uv.ips
-    #        version: 1.0.0
-    #    supported_resource_types:
-    #      - Patient
-    #      - Observation
+
 
 #    enable_repository_validating_interceptor: true
     use_apache_address_strategy: true
@@ -99,7 +85,7 @@ hapi:
     tester:
       home:
         name: Local Tester
-        server_address: http://sandbox.hl7europe.eu/${SANDBOX_NAME}/fhir
+        server_address: ${HOSTNAME}${SANDBOX_NAME}/fhir
         refuse_to_fetch_third_party_urls: false
         fhir_version: ${FHIR_VERSION}
 
